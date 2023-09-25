@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 1153395079}
   - component: {fileID: 1153395081}
   - component: {fileID: 1153395080}
+  - component: {fileID: 1153395082}
   m_Layer: 5
   m_Name: DateContainer
   m_TagString: Untagged
@@ -1396,6 +1397,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153395078}
   m_CullTransparentMesh: 1
+--- !u!114 &1153395082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153395078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c060abdd53b344e9a65b2ef0f54189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 824480311}
 --- !u!1 &1354141925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,8 +1546,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1659859599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1533709792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1533709793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1611,7 +1623,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533709792}
   m_CullTransparentMesh: 1
->>>>>>> Stashed changes
 --- !u!1 &1659859597
 GameObject:
   m_ObjectHideFlags: 0
