@@ -10,15 +10,18 @@ public class GroupMenu : MonoBehaviour
     public TMP_Dropdown GroupDropdown;
     [SerializeField] private TMP_Text GroupText;
     private bool isOpen;
-    List<string> classes = new List<string> { "class 1", "class 2", "class 3", "class 4", "class 5", "class 6" };
+    List<string> Groups = new List<string> { "group 1", "group 2", "group 3", "group 4", "group 5", "group 6" };
+
+    public SettingsData SettingsData;
 
     void Start()
     {
         isOpen = false;
         GroupPanel.SetActive(isOpen);
 
-        GroupDropdown.AddOptions(classes);
-        GroupText.text = GroupDropdown.options[GroupDropdown.value].text;
+        GroupDropdown.AddOptions(Groups);
+        GroupText.text = GroupDropdown.options[SettingsData.GroupIndex].text;
+        DropdownSelect(SettingsData.GroupIndex);
     }
 
     public void OpenGroupPanel()
@@ -33,5 +36,7 @@ public class GroupMenu : MonoBehaviour
     public void DropdownSelect(int index)
     {
         GroupText.text = GroupDropdown.options[GroupDropdown.value].text;
+        SettingsData.Group = GroupDropdown.options[GroupDropdown.value].text;
+        SettingsData.GroupIndex = GroupDropdown.value;
     }
 }
