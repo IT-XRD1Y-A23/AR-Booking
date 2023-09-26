@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
-
 public class RadioButtonSystem : MonoBehaviour
 {
     public ToggleGroup toggleGroup;
     public GameObject[] toggles;
     public TextMeshProUGUI dateLabel;
+
 
     void Start()
     {
@@ -22,6 +22,5 @@ public class RadioButtonSystem : MonoBehaviour
                 dateLabel.text = toggles[i].GetComponentInChildren<Text>().text;
             }
         }
-
         }
 }
