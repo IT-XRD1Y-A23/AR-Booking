@@ -16,7 +16,7 @@ public class GroupMenu : MonoBehaviour
 
     void Start()
     {
-        isOpen = false;
+        isOpen = true;
         GroupPanel.SetActive(isOpen);
 
         GroupDropdown.AddOptions(Groups);
@@ -38,5 +38,7 @@ public class GroupMenu : MonoBehaviour
         GroupText.text = GroupDropdown.options[GroupDropdown.value].text;
         SettingsData.Group = GroupDropdown.options[GroupDropdown.value].text;
         SettingsData.GroupIndex = GroupDropdown.value;
+        isOpen = !isOpen;
+        GroupPanel.SetActive(isOpen);
     }
 }
