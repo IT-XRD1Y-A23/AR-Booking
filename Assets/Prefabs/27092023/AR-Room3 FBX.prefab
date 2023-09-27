@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8028662630128932156}
   m_Layer: 0
-  m_Name: Workstation 1 - Office Chair.003
+  m_Name: Workstation 1 -Office Chair.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5628,6 +5628,8 @@ GameObject:
   - component: {fileID: 4449083743474974889}
   - component: {fileID: 3575621131715098524}
   - component: {fileID: 4657815520850079228}
+  - component: {fileID: 9165580277950126372}
+  - component: {fileID: 7800601699589319879}
   m_Layer: 0
   m_Name: Office Chair_REX.003
   m_TagString: Untagged
@@ -5703,6 +5705,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9165580277950126372
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6127631735530592940}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2504978423280329517, guid: 965c1a166b08b6f4cbcdba788ab423b6, type: 3}
+--- !u!114 &7800601699589319879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6127631735530592940}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de60a03e0ea794f40af419603528eeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mText: {fileID: 0}
 --- !u!1 &6178456914063140001
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,6 +6142,7 @@ GameObject:
   - component: {fileID: 2539278761563170474}
   - component: {fileID: 8259751569833366271}
   - component: {fileID: 2717062572192206825}
+  - component: {fileID: 6666164623065113046}
   m_Layer: 0
   m_Name: Cube.007
   m_TagString: Untagged
@@ -6179,6 +6217,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6666164623065113046
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524028473842542143}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3329902420748629119, guid: 965c1a166b08b6f4cbcdba788ab423b6, type: 3}
 --- !u!1 &6636253759611146123
 GameObject:
   m_ObjectHideFlags: 0
@@ -6323,6 +6383,7 @@ GameObject:
   - component: {fileID: 4817958043217245716}
   - component: {fileID: 6900241104791964228}
   - component: {fileID: 8056524333693537865}
+  - component: {fileID: 8140553232116120330}
   m_Layer: 0
   m_Name: Office Chair_REX.012
   m_TagString: Untagged
@@ -6398,6 +6459,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8140553232116120330
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713135803641474938}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1079119163510468510, guid: 965c1a166b08b6f4cbcdba788ab423b6, type: 3}
 --- !u!1 &6725217113467645968
 GameObject:
   m_ObjectHideFlags: 0
@@ -8232,6 +8315,7 @@ GameObject:
   - component: {fileID: 6029650605046090092}
   - component: {fileID: 1758618325243326053}
   - component: {fileID: 2627302785712887485}
+  - component: {fileID: 6753252727896355511}
   m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
@@ -8306,6 +8390,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6753252727896355511
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026188828822939948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: 965c1a166b08b6f4cbcdba788ab423b6, type: 3}
 --- !u!1 &8092675622434782388
 GameObject:
   m_ObjectHideFlags: 0
@@ -8669,6 +8775,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1164384715073208260}
   - component: {fileID: 9026925854310065473}
+  - component: {fileID: 5531582501039443356}
+  - component: {fileID: 229564063097327610}
   m_Layer: 0
   m_Name: Workstation 1
   m_TagString: Untagged
@@ -8712,6 +8820,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 9084504247456346668}
+--- !u!64 &5531582501039443356
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416372987023172754}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &229564063097327610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416372987023172754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de60a03e0ea794f40af419603528eeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mText: {fileID: 0}
 --- !u!1 &8419565308209180738
 GameObject:
   m_ObjectHideFlags: 0
@@ -9183,7 +9326,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -9859,6 +10002,7 @@ GameObject:
   - component: {fileID: 6287973191847653808}
   - component: {fileID: 7944582014141029450}
   - component: {fileID: 2605831610972417167}
+  - component: {fileID: 8919939815186783556}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -9946,7 +10090,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10014,6 +10158,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &8919939815186783556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084504247456346668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de60a03e0ea794f40af419603528eeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mText: {fileID: 0}
 --- !u!1 &9185254980627463372
 GameObject:
   m_ObjectHideFlags: 0

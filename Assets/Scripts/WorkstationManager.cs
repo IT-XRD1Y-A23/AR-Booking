@@ -11,7 +11,7 @@ public class WorkstationManager : MonoBehaviour
     // Start is called before the first frame update
     
     private Status[] statuses = new Status[8];
-    private GameObject[] workstations = new GameObject[8];
+    public GameObject[] workstations = new GameObject[8];
     
     
     
@@ -76,6 +76,20 @@ public class WorkstationManager : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    public GameObject GetWorkstation(int index)
+    {
+        if (workstations[index] != null)
+        {
+            print("Works fine");
+            return workstations[index];
+        }
+        else
+        {
+            print("Works not fine");
+            return workstations[index + 1];
         }
     }
     

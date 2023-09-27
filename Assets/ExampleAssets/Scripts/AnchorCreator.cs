@@ -19,8 +19,6 @@ public class AnchorCreator : MonoBehaviour
     [SerializeField]
     GameObject m_AnchorPrefab;
 
-    public TextMeshProUGUI mText; 
-
     public GameObject AnchorPrefab
     {
         get => m_AnchorPrefab;
@@ -51,7 +49,6 @@ public class AnchorCreator : MonoBehaviour
 
     void Update()
     {
-        mText.text = "Prefabs = " + m_AnchorPoints.Count;
         // If there is no tap, then simply do nothing until the next call to Update().
         if (Input.touchCount == 0)
             return;

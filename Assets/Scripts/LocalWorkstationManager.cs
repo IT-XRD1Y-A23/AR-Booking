@@ -27,10 +27,11 @@ public class LocalWorkstationManager : MonoBehaviour
         _light.color = status.ToColor();
     }
     
-    void OnMouseDown(){
-        
-        
-        
+    void OnMouseDown()
+    {
+
+        print("HELLO");
+
     }
 
     private int GetWorkstationNumber()
