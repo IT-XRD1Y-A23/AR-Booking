@@ -336,7 +336,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.040236473, g: 1, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 1.92
+  m_Range: 0.192
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1060,6 +1060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4297185634963985571}
+  - component: {fileID: 8231859048342612211}
   m_Layer: 0
   m_Name: Workstation 5
   m_TagString: Untagged
@@ -1087,6 +1088,19 @@ Transform:
   - {fileID: 2389749849657878145}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8231859048342612211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178884256610672333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 4752605509589363930}
 --- !u!1 &1243136798772583011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,7 +2702,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_Intensity: 8.21
-  m_Range: 1.28
+  m_Range: 0.128
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4213,7 +4227,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1164384715073208260}
@@ -4636,7 +4650,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 2
+  m_Range: 0.2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4989,6 +5003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 961312120425372965}
+  - component: {fileID: 3392570370357784029}
   m_Layer: 0
   m_Name: Workstation 4
   m_TagString: Untagged
@@ -5016,6 +5031,19 @@ Transform:
   - {fileID: 551318651225361974}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3392570370357784029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987287897594940377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 3030943851052551629}
 --- !u!1 &5039409662706596689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5459,6 +5487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9027726764052003931}
+  - component: {fileID: 9045745508194905894}
   m_Layer: 0
   m_Name: Workstation 2
   m_TagString: Untagged
@@ -5489,6 +5518,19 @@ Transform:
   - {fileID: 1902199645692381567}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9045745508194905894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111201162197428427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 8615247975388333925}
 --- !u!1 &6120623717838953257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5753,6 +5795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191628149401210253}
+  - component: {fileID: 962730196243344130}
   m_Layer: 0
   m_Name: Workstation 8
   m_TagString: Untagged
@@ -5781,6 +5824,19 @@ Transform:
   - {fileID: 3379553908289904416}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962730196243344130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250442132679963971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 7781318968190398927}
 --- !u!1 &6307171639009171645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,6 +6271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6064487566596377249}
+  - component: {fileID: 4048921748380410942}
   m_Layer: 0
   m_Name: Workstation 6
   m_TagString: Untagged
@@ -6242,6 +6299,19 @@ Transform:
   - {fileID: 7527555797757215241}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4048921748380410942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677603868214434945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 7471115982930954871}
 --- !u!1 &6713135803641474938
 GameObject:
   m_ObjectHideFlags: 0
@@ -7184,7 +7254,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_Intensity: 8.55
-  m_Range: 2
+  m_Range: 0.2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7521,7 +7591,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.0073931217, g: 1, b: 0, a: 1}
   m_Intensity: 12.5
-  m_Range: 4
+  m_Range: 0.4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7663,6 +7733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056383312461845466}
+  - component: {fileID: 6788103367258707785}
   m_Layer: 0
   m_Name: Workstation 7
   m_TagString: Untagged
@@ -7690,6 +7761,19 @@ Transform:
   - {fileID: 9004357966505715548}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6788103367258707785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7800095080926568086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 371575725518234152}
 --- !u!1 &7835258921425865564
 GameObject:
   m_ObjectHideFlags: 0
@@ -8551,7 +8635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7666088834070652064
 Transform:
   m_ObjectHideFlags: 0
@@ -8584,6 +8668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164384715073208260}
+  - component: {fileID: 9026925854310065473}
   m_Layer: 0
   m_Name: Workstation 1
   m_TagString: Untagged
@@ -8614,6 +8699,19 @@ Transform:
   - {fileID: 3751351157336490671}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9026925854310065473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416372987023172754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 9084504247456346668}
 --- !u!1 &8419565308209180738
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,7 +9202,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.074186325, g: 1, b: 0, a: 1}
   m_Intensity: 9.18
-  m_Range: 1.4
+  m_Range: 0.14
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -9645,7 +9743,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.101122975, g: 1, b: 0, a: 1}
   m_Intensity: 8.08
-  m_Range: 2.21
+  m_Range: 0.221
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -9703,6 +9801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9108851438874481738}
+  - component: {fileID: 5559964211622890487}
   m_Layer: 0
   m_Name: Workstation 3
   m_TagString: Untagged
@@ -9734,6 +9833,19 @@ Transform:
   - {fileID: 8784897797213131577}
   m_Father: {fileID: 876545493794495017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5559964211622890487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935552211529534238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ac6082b38910e468ec1b802f509982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightObject: {fileID: 8839600755043424760}
 --- !u!1 &9084504247456346668
 GameObject:
   m_ObjectHideFlags: 0
@@ -9853,7 +9965,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.074186325, g: 1, b: 0, a: 1}
   m_Intensity: 9.18
-  m_Range: 1.4
+  m_Range: 0.14
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
