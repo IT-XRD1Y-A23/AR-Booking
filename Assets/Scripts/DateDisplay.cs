@@ -9,13 +9,7 @@ public class DateDisplay : MonoBehaviour
     void Start()
     {
         text = FindObjectOfType<TextMeshProUGUI>();
+        text.text = currentDate +" 8:00-12:00";
 
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        text.text = currentDate;
     }
 }
