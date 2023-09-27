@@ -1263,7 +1263,7 @@ GameObject:
   - component: {fileID: 1368874963}
   - component: {fileID: 1368874962}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Prefab Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

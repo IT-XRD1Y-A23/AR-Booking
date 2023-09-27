@@ -6,19 +6,14 @@ public class LocalWorkstationManager : MonoBehaviour
 
     public GameObject lightObject;
     private Light _light;
-    private int workstationNumber;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         _light = lightObject.GetComponent<Light>();
-
-        workstationNumber = getWorkstationNumber();
-
-        print(workstationNumber);
         
-        
-        
+        WorkstationManager workstationManager = WorkstationManager.Instance;
+        workstationManager.SetWorkstation(GetWorkstationNumber(), gameObject);
     }
 
     // Update is called once per frame
@@ -38,7 +33,7 @@ public class LocalWorkstationManager : MonoBehaviour
         
     }
 
-    private int getWorkstationNumber()
+    private int GetWorkstationNumber()
     {
         string[] words = gameObject.name.Split(' ');
         return Int32.Parse(words[1]);
