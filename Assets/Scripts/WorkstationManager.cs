@@ -60,12 +60,12 @@ public class WorkstationManager : MonoBehaviour
             case Status.Unavailable:
                 return;
             case Status.Selected:
-                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
+                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1, Status.Available);
                 break;
             case Status.Available:
-                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Selected);
+                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1, Status.Selected);
                 if(previouslySelectedWorkstation != null)
-                    SetWorkstationStatus(previouslySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
+                    SetWorkstationStatus(previouslySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1, Status.Available);
                 previouslySelectedWorkstation = currentlySelectedWorkstation;
                 break;
         }
@@ -106,7 +106,8 @@ public class WorkstationManager : MonoBehaviour
 
     void SetWorkstationStatus(int workstationNumber, Status status)
     {
-        workstations[0].GetComponent<LocalWorkstationManager>().SetLight(status);
+        workstations[workstationNumber].GetComponent<LocalWorkstationManager>().SetLight(status);
+        statuses[workstationNumber] = status;
     }
     
     private bool AreAllWorkstationsRegistered()
