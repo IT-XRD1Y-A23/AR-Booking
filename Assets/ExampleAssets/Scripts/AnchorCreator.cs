@@ -56,6 +56,9 @@ public class AnchorCreator : MonoBehaviour
         if (touch.phase != TouchPhase.Began)
             return;
 
+        if(m_AnchorPoints.Count != 0)
+            return;
+        
         if (m_RaycastManager.Raycast(touch.position, s_Hits, TrackableType.PlaneWithinPolygon))
         {
             // Raycast hits are sorted by distance, so the first one
