@@ -16,25 +16,12 @@ public class LocalWorkstationManager : MonoBehaviour
         workstationManager.SetWorkstation(GetWorkstationNumber(), gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetLight(Status status)
     {
         _light.color = status.ToColor();
     }
-    
-    void OnMouseDown()
-    {
 
-        print("HELLO");
-
-    }
-
-    private int GetWorkstationNumber()
+    public int GetWorkstationNumber()
     {
         string[] words = gameObject.name.Split(' ');
         return Int32.Parse(words[1]);

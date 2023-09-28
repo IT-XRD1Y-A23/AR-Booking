@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CollisionDetection : MonoBehaviour
+public class TouchRegister : MonoBehaviour
 {
-    GameObject workstation;
-    public TextMeshProUGUI mText; 
+    
+    WorkstationManager workstationManager;
+    public TextMeshProUGUI debugText;
     
     // Start is called before the first frame update
     void Start()
     {
-        workstation = GetWorkstationParent(gameObject);
+        workstationManager = WorkstationManager.Instance;
     }
 
     // Update is called once per frame
@@ -28,17 +29,18 @@ public class CollisionDetection : MonoBehaviour
                     GameObject workstation = GetWorkstationParent(hit.transform.gameObject);
                     if (workstation == null)
                     {
-                        mText.text = "HIT = " + hit.transform.gameObject.name + " has no parent workstation!";
+                        debugText.text = "HIT = " + hit.transform.gameObject.name + " has no parent workstation!";
                     }
                     else
                     {
-                        mText.text = "HIT = " + workstation.name;
+                        debugText.text = "HIT = " + workstation.name;
+                        workstationManager.SetCurrentSelectedWorkstation(workstation);
                     }
                 }
             }
         }
     }
-
+    
     private GameObject GetWorkstationParent(GameObject currentGameObject)
     {
         while (true)
@@ -53,13 +55,5 @@ public class CollisionDetection : MonoBehaviour
             }
         }
     }
-
-    void OnMouseDown()
-    {
-        
-        print(workstation.name);
-        
-        workstation.GetComponent<LocalWorkstationManager>().SetLight(Status.Selected);
-    }
-
+    
 }

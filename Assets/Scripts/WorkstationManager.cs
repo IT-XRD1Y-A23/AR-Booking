@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class WorkstationManager : MonoBehaviour
@@ -13,7 +14,10 @@ public class WorkstationManager : MonoBehaviour
     private Status[] statuses = new Status[8];
     public GameObject[] workstations = new GameObject[8];
     
-    
+    public TextMeshProUGUI debugText;
+
+    private GameObject currentlySelectedWorkstation;
+    private GameObject previouslySelectedWorkstation;
     
     private void Awake() 
     { 
@@ -33,9 +37,9 @@ public class WorkstationManager : MonoBehaviour
     
     void Start()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0 ; i < statuses.Length; i ++)
         {
-            
+            statuses[i] = Status.Available;
         }
     }
 
@@ -45,13 +49,51 @@ public class WorkstationManager : MonoBehaviour
         print("Workstation " + index + " has been registered.");
     }
 
+    public void SetCurrentSelectedWorkstation(GameObject hit)
+    {
+        currentlySelectedWorkstation = hit;
+        debugText.text = "SELECTED = WORKSTATION " + currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber();
+        Status currentlySelectedWorkstationStatus =
+            statuses[currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()];
+        switch(currentlySelectedWorkstationStatus) 
+        {
+            case Status.Unavailable:
+                return;
+            case Status.Selected:
+                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
+                break;
+            case Status.Available:
+                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Selected);
+                if(previouslySelectedWorkstation != null)
+                    SetWorkstationStatus(previouslySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
+                previouslySelectedWorkstation = currentlySelectedWorkstation;
+                break;
+        }
+        
+        currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().SetLight(Status.Selected);
+        
+        
+        
+    }
+    
+    private static GameObject GetWorkstationParent(GameObject currentGameObject)
+    {
+            if (currentGameObject.name.Contains("Workstation") && currentGameObject.name.Length == 13)
+            {
+                return currentGameObject.gameObject;
+            }
+
+            if (currentGameObject.transform.parent != null)
+            {
+                GetWorkstationParent(currentGameObject.transform.parent.gameObject);
+            }
+
+            return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (workstations.All(o => o != null))
-        {
-            
-        }
     }
 
     void StartupLights()
