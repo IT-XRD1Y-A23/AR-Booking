@@ -1,9 +1,20 @@
 ﻿using System;
 
 public class Booking
+{
+    public int workstationNumber;
+    public string bookedDate;
+    public int timeslot;
+    public string groupNumber; 
+
+
+    public Booking(int workstationNumber,string bookedDate,  int timeslot, string groupNumber)
     {
-        public int workstationNumber { get; set; }
-        public DateTime bookedDate { get; set; }
-        public int timeslot { get; set; }
-        public String groupNumber { get; set; }
+        this.workstationNumber = workstationNumber;
+        this.bookedDate = bookedDate;
+        this.timeslot = timeslot;
+        this.groupNumber = groupNumber;
     }
+
+}
+

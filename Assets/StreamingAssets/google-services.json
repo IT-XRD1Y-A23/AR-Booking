@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "675276839653",
+    "firebase_url": "https://ar-workstation-booking-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ar-workstation-booking",
+    "storage_bucket": "ar-workstation-booking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675276839653:android:44b84a4423263a0467d20c",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.ARBooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD07FdPnauFDh1i93bu9ypuc7aOIsDOPM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -46,7 +46,7 @@ public class WorkstationManager : MonoBehaviour
     public void SetWorkstation(int index, GameObject workstation)
     {
         workstations[index-1] = workstation;
-        print("Workstation " + index + " has been registered.");
+      //  print("Workstation " + index + " has been registered.");
     }
 
     public void SetCurrentSelectedWorkstation(GameObject hit)
