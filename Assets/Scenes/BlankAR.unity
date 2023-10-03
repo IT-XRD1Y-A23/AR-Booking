@@ -6324,6 +6324,21 @@ PrefabInstance:
       objectReference: {fileID: 134144001}
     - target: {fileID: 219953110393706681, guid: 4cae7ca9b404c6f4993f2a8650da1589,
         type: 3}
+      propertyPath: groupsPopup
+      value: 
+      objectReference: {fileID: 1196173717}
+    - target: {fileID: 219953110393706681, guid: 4cae7ca9b404c6f4993f2a8650da1589,
+        type: 3}
+      propertyPath: bookingsPopup
+      value: 
+      objectReference: {fileID: 845095261}
+    - target: {fileID: 219953110393706681, guid: 4cae7ca9b404c6f4993f2a8650da1589,
+        type: 3}
+      propertyPath: datePickerPopup
+      value: 
+      objectReference: {fileID: 487890964}
+    - target: {fileID: 219953110393706681, guid: 4cae7ca9b404c6f4993f2a8650da1589,
+        type: 3}
       propertyPath: workstationPopup
       value: 
       objectReference: {fileID: 1138229746}

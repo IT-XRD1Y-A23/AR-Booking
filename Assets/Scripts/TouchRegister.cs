@@ -57,9 +57,17 @@ public class TouchRegister : MonoBehaviour
             }
         }
     }
+
+    public GameObject datePickerPopup;
+    public GameObject groupsPopup;
+    public GameObject bookingsPopup;
+
     public GameObject workstationPopup;
     public void openPopup(GameObject workstation)
     {
-        workstationPopup.SetActive(true);
+        if (!datePickerPopup.activeSelf && !groupsPopup.activeSelf && !bookingsPopup.activeSelf)
+        {
+            workstationPopup.SetActive(true);
+        }
     }
 }
