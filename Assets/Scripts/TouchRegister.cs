@@ -33,10 +33,13 @@ public class TouchRegister : MonoBehaviour
                     }
                     else
                     {
-                        debugText.text = "HIT = " + workstation.name;
-                        workstationManager.SetCurrentSelectedWorkstation(workstation);
+                        if (!datePickerPopup.activeSelf && !groupsPopup.activeSelf && !bookingsPopup.activeSelf)
+                        {
+                            debugText.text = "HIT = " + workstation.name;
+                            workstationManager.SetCurrentSelectedWorkstation(workstation);
 
-                        openPopup(workstation);
+                            openPopup(workstation);
+                        }
                     }
                 }
             }
@@ -57,9 +60,15 @@ public class TouchRegister : MonoBehaviour
             }
         }
     }
+
+    public GameObject datePickerPopup;
+    public GameObject groupsPopup;
+    public GameObject bookingsPopup;
+
     public GameObject workstationPopup;
     public void openPopup(GameObject workstation)
     {
         workstationPopup.SetActive(true);
+
     }
 }
