@@ -11,7 +11,7 @@ public class LocalWorkstationManager : MonoBehaviour
     void Start()
     {
         _light = lightObject.GetComponent<Light>();
-        
+
         WorkstationManager workstationManager = WorkstationManager.Instance;
         workstationManager.SetWorkstation(GetWorkstationNumber(), gameObject);
     }
@@ -26,5 +26,5 @@ public class LocalWorkstationManager : MonoBehaviour
         string[] words = gameObject.name.Split(' ');
         return Int32.Parse(words[1]);
     }
-    
+
 }

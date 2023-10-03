@@ -8,36 +8,37 @@ public class WorkstationManager : MonoBehaviour
 {
 
     public static WorkstationManager Instance { get; private set; }
-    
+
     // Start is called before the first frame update
-    
+
     private Status[] statuses = new Status[8];
+    private string[] descriptions = new string[8];
     public GameObject[] workstations = new GameObject[8];
-    
+
     public TextMeshProUGUI debugText;
 
     private GameObject currentlySelectedWorkstation;
     private GameObject previouslySelectedWorkstation;
-    
-    private void Awake() 
-    { 
+
+    private void Awake()
+    {
         // If there is an instance, and it's not me, delete myself.
-    
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else 
-        { 
-            Instance = this; 
-        } 
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
-    
-    
-    
+
+
+
     void Start()
     {
-        for (int i = 0 ; i < statuses.Length; i ++)
+        for (int i = 0; i < statuses.Length; i++)
         {
             statuses[i] = Status.Available;
         }
@@ -45,8 +46,8 @@ public class WorkstationManager : MonoBehaviour
 
     public void SetWorkstation(int index, GameObject workstation)
     {
-        workstations[index-1] = workstation;
-      //  print("Workstation " + index + " has been registered.");
+        workstations[index - 1] = workstation;
+        //  print("Workstation " + index + " has been registered.");
     }
 
     public void SetCurrentSelectedWorkstation(GameObject hit)
@@ -54,41 +55,41 @@ public class WorkstationManager : MonoBehaviour
         currentlySelectedWorkstation = hit;
         debugText.text = "SELECTED = WORKSTATION " + currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber();
         Status currentlySelectedWorkstationStatus =
-            statuses[currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1];
-        switch(currentlySelectedWorkstationStatus) 
+            statuses[currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber() - 1];
+        switch (currentlySelectedWorkstationStatus)
         {
             case Status.Unavailable:
                 return;
             case Status.Selected:
-                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1, Status.Available);
+                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber() - 1, Status.Available);
                 break;
             case Status.Available:
-                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1, Status.Selected);
-                if(previouslySelectedWorkstation != null)
-                    SetWorkstationStatus(previouslySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1, Status.Available);
+                SetWorkstationStatus(currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber() - 1, Status.Selected);
+                if (previouslySelectedWorkstation != null)
+                    SetWorkstationStatus(previouslySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber() - 1, Status.Available);
                 previouslySelectedWorkstation = currentlySelectedWorkstation;
                 break;
         }
-        
+
         currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().SetLight(Status.Selected);
-        
-        
-        
+
+
+
     }
-    
+
     private static GameObject GetWorkstationParent(GameObject currentGameObject)
     {
-            if (currentGameObject.name.Contains("Workstation") && currentGameObject.name.Length == 13)
-            {
-                return currentGameObject.gameObject;
-            }
+        if (currentGameObject.name.Contains("Workstation") && currentGameObject.name.Length == 13)
+        {
+            return currentGameObject.gameObject;
+        }
 
-            if (currentGameObject.transform.parent != null)
-            {
-                GetWorkstationParent(currentGameObject.transform.parent.gameObject);
-            }
+        if (currentGameObject.transform.parent != null)
+        {
+            GetWorkstationParent(currentGameObject.transform.parent.gameObject);
+        }
 
-            return null;
+        return null;
     }
 
     // Update is called once per frame
@@ -109,7 +110,7 @@ public class WorkstationManager : MonoBehaviour
         workstations[workstationNumber].GetComponent<LocalWorkstationManager>().SetLight(status);
         statuses[workstationNumber] = status;
     }
-    
+
     private bool AreAllWorkstationsRegistered()
     {
         if (workstations.All(o => o != null))
@@ -135,5 +136,5 @@ public class WorkstationManager : MonoBehaviour
             return workstations[index + 1];
         }
     }
-    
+
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TouchRegister : MonoBehaviour
 {
-    
+
     WorkstationManager workstationManager;
     public TextMeshProUGUI debugText;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +35,14 @@ public class TouchRegister : MonoBehaviour
                     {
                         debugText.text = "HIT = " + workstation.name;
                         workstationManager.SetCurrentSelectedWorkstation(workstation);
+
+                        openPopup(workstation);
                     }
                 }
             }
         }
     }
-    
+
     private GameObject GetWorkstationParent(GameObject currentGameObject)
     {
         while (true)
@@ -55,5 +57,9 @@ public class TouchRegister : MonoBehaviour
             }
         }
     }
-    
+    public GameObject workstationPopup;
+    public void openPopup(GameObject workstation)
+    {
+        workstationPopup.SetActive(true);
+    }
 }
