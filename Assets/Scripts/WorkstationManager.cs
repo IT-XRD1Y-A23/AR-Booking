@@ -54,7 +54,7 @@ public class WorkstationManager : MonoBehaviour
         currentlySelectedWorkstation = hit;
         debugText.text = "SELECTED = WORKSTATION " + currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber();
         Status currentlySelectedWorkstationStatus =
-            statuses[currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()];
+            statuses[currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber()-1];
         switch(currentlySelectedWorkstationStatus) 
         {
             case Status.Unavailable:
