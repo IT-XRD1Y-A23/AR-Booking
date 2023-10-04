@@ -47,7 +47,7 @@ public class WorkstationManager : MonoBehaviour
         
         // Get bookings from database and light up workstations which are reserved in the current timeslot chosen.
         
-        _bookings.Add(new Booking(2,DateTime.Now.ToString(), 1, "2Y"));
+        //_bookings.Add(new Booking(2,DateTime.Now.ToString(), 1, "2Y"));
         
     }
 
