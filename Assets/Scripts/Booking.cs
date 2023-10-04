@@ -3,12 +3,12 @@
 public class Booking
 {
     public int workstationNumber;
-    public string bookedDate;
+    public DateTime bookedDate;
     public int timeslot;
     public string groupNumber; 
 
 
-    public Booking(int workstationNumber,string bookedDate,  int timeslot, string groupNumber)
+    public Booking(int workstationNumber,DateTime bookedDate,  int timeslot, string groupNumber)
     {
         this.workstationNumber = workstationNumber;
         this.bookedDate = bookedDate;
