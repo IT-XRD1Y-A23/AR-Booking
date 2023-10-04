@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,9 @@ public class WorkstationManager : MonoBehaviour
     // Start is called before the first frame update
 
     private Status[] statuses = new Status[8];
-    private string[] descriptions = new string[8];
+    private string[] _descriptions = new string[8];
     public GameObject[] workstations = new GameObject[8];
+    private List<Booking> _bookings { get; set; } = new List<Booking>();
 
     public TextMeshProUGUI debugText;
 
@@ -42,6 +44,11 @@ public class WorkstationManager : MonoBehaviour
         {
             statuses[i] = Status.Available;
         }
+        
+        // Get bookings from database and light up workstations which are reserved in the current timeslot chosen.
+        
+        _bookings.Add(new Booking(2,DateTime.Now.ToString(), 1, "2Y"));
+        
     }
 
     public void SetWorkstation(int index, GameObject workstation)
@@ -77,31 +84,21 @@ public class WorkstationManager : MonoBehaviour
 
     }
 
-    private static GameObject GetWorkstationParent(GameObject currentGameObject)
-    {
-        if (currentGameObject.name.Contains("Workstation") && currentGameObject.name.Length == 13)
-        {
-            return currentGameObject.gameObject;
-        }
-
-        if (currentGameObject.transform.parent != null)
-        {
-            GetWorkstationParent(currentGameObject.transform.parent.gameObject);
-        }
-
-        return null;
-    }
-
     // Update is called once per frame
     void Update()
     {
+        // Check for changes in bookings and change light colours accordingly.
     }
 
-    void StartupLights()
+    void RefreshLights(List<Booking> bookings)
     {
-        for (int i = 0; i < statuses.Length; i++)
+        foreach (var workstation in workstations)
         {
-            statuses[i] = Status.Unavailable;
+            workstation.GetComponent<LocalWorkstationManager>().SetLight(Status.Available);
+        }
+        foreach (var booking in bookings)
+        {
+            workstations[booking.workstationNumber-1].GetComponent<LocalWorkstationManager>().SetLight(Status.Unavailable);
         }
     }
 
