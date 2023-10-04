@@ -10,7 +10,7 @@ using UnityEngine.Events;
 
 public class FirebaseInit : MonoBehaviour
 {
-    private string userID;
+   
     private DatabaseReference dbReference;
     private void Start()
     {
@@ -18,15 +18,12 @@ public class FirebaseInit : MonoBehaviour
         {
             Debug.Log(task.Exception != null ? $"Firebase failed to init - {task.Exception}" : "Firebase initialized");
         });
-
-        userID = SystemInfo.deviceUniqueIdentifier;
-        dbReference = FirebaseDatabase.DefaultInstance.RootReference;
-        
     }
 
     public void CreateBooking()
     {
-        print("Hello");
+        
+        dbReference = FirebaseDatabase.DefaultInstance.RootReference;
        
         var date = DateTime.Now.ToString("dd_MM_yyyy");
         var b1 = new Booking(1, DateTime.Now.ToString(),  1, "y2");
