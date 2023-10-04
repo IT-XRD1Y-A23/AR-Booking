@@ -47,8 +47,17 @@ public class WorkstationManager : MonoBehaviour
         
         // Get bookings from database and light up workstations which are reserved in the current timeslot chosen.
         
-        //_bookings.Add(new Booking(2,DateTime.Now.ToString(), 1, "2Y"));
-        
+    }
+
+    public void btnRefreshLights()
+    {
+        _bookings = new List<Booking>
+        {
+            new Booking(2, DateTime.Now, 1, "2Y"),
+            new Booking(4, DateTime.Now, 1, "2Y")
+        };
+
+        RefreshLights(_bookings);
     }
 
     public void SetWorkstation(int index, GameObject workstation)
@@ -90,8 +99,9 @@ public class WorkstationManager : MonoBehaviour
         // Check for changes in bookings and change light colours accordingly.
     }
 
-    void RefreshLights(List<Booking> bookings)
+    public void RefreshLights(List<Booking> bookings)
     {
+        
         foreach (var workstation in workstations)
         {
             workstation.GetComponent<LocalWorkstationManager>().SetLight(Status.Available);
