@@ -17,7 +17,9 @@ public class FirebaseInit : MonoBehaviour
         {
             Debug.Log(task.Exception != null ? $"Firebase failed to init - {task.Exception}" : "Firebase initialized");
         });
-	}
+
+        Fm = new FirebaseManager();
+    }
 
     public void CreateBooking()
     {
