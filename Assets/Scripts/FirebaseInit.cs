@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FirebaseInit : MonoBehaviour
 {
-   
+    private FirebaseManager Fm;
     private DatabaseReference dbReference;
     
 
@@ -17,21 +17,19 @@ public class FirebaseInit : MonoBehaviour
         {
             Debug.Log(task.Exception != null ? $"Firebase failed to init - {task.Exception}" : "Firebase initialized");
         });
-        
-        while (FirebaseDatabase.DefaultInstance.RootReference == null)
-        {
-            print("Firebase is busy");
-        }
-        dbReference = FirebaseDatabase.DefaultInstance.RootReference;
-        
-    }
+	}
 
     public void CreateBooking()
     {
-        var date = DateTime.Now.ToString("dd_MM_yyyy");
-        var b1 = new Booking(1, DateTime.Now.ToString(),  1, "y2");
-        var json = JsonUtility.ToJson(b1);
-        dbReference.Child("bookings").Child(date).SetRawJsonValueAsync(json);
-      
+        
+     //  dbReference = FirebaseDatabase.DefaultInstance.RootReference;
+     // 
+     //  var date = DateTime.Now.ToString("dd_MM_yyyy");
+     //  var b1 = new Booking(1, DateTime.Now,  1, "y2");
+     //  var json = JsonUtility.ToJson(b1);
+     //  dbReference.Child("bookings").Child(date).SetRawJsonValueAsync(json);
+
+
+     Fm.BookWorkstation(new Booking(1, DateTime.Today, 2, "2"));
     }
 }
