@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class TouchRegister : MonoBehaviour
 {
-
-    WorkstationManager workstationManager;
+    private WorkstationManager _workstationManager;
     public TextMeshProUGUI debugText;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        workstationManager = WorkstationManager.Instance;
+        _camera = Camera.main;
+        _workstationManager = WorkstationManager.Instance;
     }
 
     // Update is called once per frame
@@ -20,14 +20,14 @@ public class TouchRegister : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            if (Camera.main != null)
+            if (_camera is not null)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                Ray ray = _camera.ScreenPointToRay(Input.GetTouch(0).position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
                     GameObject workstation = GetWorkstationParent(hit.transform.gameObject);
-                    if (workstation == null)
+                    if (workstation is null)
                     {
                         debugText.text = "HIT = " + hit.transform.gameObject.name + " has no parent workstation!";
                     }
@@ -36,9 +36,8 @@ public class TouchRegister : MonoBehaviour
                         if (!datePickerPopup.activeSelf && !groupsPopup.activeSelf && !bookingsPopup.activeSelf)
                         {
                             debugText.text = "HIT = " + workstation.name;
-                            workstationManager.SetCurrentSelectedWorkstation(workstation);
-
-                            openPopup(workstation);
+                            _workstationManager.SetCurrentSelectedWorkstation(workstation);
+                            //OpenPopup(workstation);
                         }
                     }
                 }
@@ -66,9 +65,10 @@ public class TouchRegister : MonoBehaviour
     public GameObject bookingsPopup;
 
     public GameObject workstationPopup;
-    public void openPopup(GameObject workstation)
+    private Camera _camera;
+
+    private void OpenPopup(GameObject workstation)
     {
         workstationPopup.SetActive(true);
-
     }
 }

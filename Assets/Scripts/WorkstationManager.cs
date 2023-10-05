@@ -12,9 +12,10 @@ public class WorkstationManager : MonoBehaviour
 
     public static WorkstationManager Instance { get; private set; }
 
-    public  Status[] _statuses = new Status[8];
+    public  Status[] statuses = new Status[8];
     private readonly string[] _descriptions = new string[8];
-    public GameObject[] workstations = new GameObject[8];
+    public LocalWorkstationManager[] workstations = new LocalWorkstationManager[8];
+    
     private List<Booking> Bookings { get; set; } = new();
 
     public TextMeshProUGUI debugText;
@@ -72,8 +73,13 @@ public class WorkstationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check for changes in bookings and change light colours accordingly.
-        
+        if (AllWorkstationsAreRegistered())
+        {
+            // Check for changes in bookings and change light colours accordingly.
+            
+            
+            
+        }
     }
 
     public void BtnChangeStatus()
@@ -91,29 +97,24 @@ public class WorkstationManager : MonoBehaviour
      *  SELECTION METHOD
      *  This code will detect which workstation is being selected by Raycast and turn the previously selected workstation off.
      */
-    private GameObject _currentlySelectedWorkstation;
-    private GameObject _previouslySelectedWorkstation;
+    private LocalWorkstationManager _currentlySelectedWorkstation;
+    private LocalWorkstationManager _previouslySelectedWorkstation;
     public void SetCurrentSelectedWorkstation(GameObject hit)
     {
-        _currentlySelectedWorkstation = hit;
-        debugText.text = "SELECTED = WORKSTATION " + _currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber();
-        Status currentlySelectedWorkstationStatus = GetWorkstationStatus(_currentlySelectedWorkstation
-            .GetComponent<LocalWorkstationManager>().GetWorkstationNumber());
+        _currentlySelectedWorkstation = hit.GetComponent<LocalWorkstationManager>();
+        var currentlySelectedWorkstationStatus = GetWorkstationStatus(_currentlySelectedWorkstation.GetWorkstationNumber());
         switch (currentlySelectedWorkstationStatus)
         {
-            case Status.Unavailable:
-                return;
-            case Status.Selected:
-                SetWorkstationStatus(_currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
-                break;
             case Status.Available:
-                SetWorkstationStatus(_currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Selected);
-                if (_previouslySelectedWorkstation != null)
-                    SetWorkstationStatus(_previouslySelectedWorkstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
+                SetWorkstationStatus(_currentlySelectedWorkstation.GetWorkstationNumber(), Status.Selected);
+                if (_previouslySelectedWorkstation != null && _previouslySelectedWorkstation != _currentlySelectedWorkstation)
+                    SetWorkstationStatus(_previouslySelectedWorkstation.GetWorkstationNumber(), Status.Available);
                 _previouslySelectedWorkstation = _currentlySelectedWorkstation;
                 break;
+            default:
+                return;
         }
-        _currentlySelectedWorkstation.GetComponent<LocalWorkstationManager>().SetLight(Status.Selected);
+        _currentlySelectedWorkstation.SetLight(Status.Selected);
     }
 
     public void RefreshLights(List<Booking> bookings)
@@ -129,7 +130,7 @@ public class WorkstationManager : MonoBehaviour
         }
     }
 
-    private bool AreAllWorkstationsRegistered()
+    private bool AllWorkstationsAreRegistered()
     {
         if (workstations.All(o => o != null))
         {
@@ -146,7 +147,7 @@ public class WorkstationManager : MonoBehaviour
      */
     
     // Workstation
-    public void SetWorkstation(int index, GameObject workstation)
+    public void SetWorkstation(int index, LocalWorkstationManager workstation)
     {
         workstations[index - 1] = workstation;
     }
@@ -154,12 +155,12 @@ public class WorkstationManager : MonoBehaviour
     // Status of workstations
     public Status GetWorkstationStatus(int workstationNumber)
     {
-        return _statuses[workstationNumber - 1];
+        return statuses[workstationNumber - 1];
     }
-    
+
     public void SetWorkstationStatus(int workstationNumber, Status status)
     {
-        _statuses[workstationNumber-1] = status;
+        statuses[workstationNumber-1] = status;
     }
     
     // Booking
@@ -171,8 +172,7 @@ public class WorkstationManager : MonoBehaviour
     
     public void SetBookings(Booking booking)
     {
-        Bookings = new List<Booking>();
-        Bookings.Add(booking);
+        Bookings = new List<Booking> { booking };
     }
     
 }

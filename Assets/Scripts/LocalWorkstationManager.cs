@@ -14,7 +14,7 @@ public class LocalWorkstationManager : MonoBehaviour
         _light = lightObject.GetComponent<Light>();
 
         _workstationManager = WorkstationManager.Instance;
-        _workstationManager.SetWorkstation(GetWorkstationNumber(), gameObject);
+        _workstationManager.SetWorkstation(GetWorkstationNumber(), this);
     }
 
     private void Update()
