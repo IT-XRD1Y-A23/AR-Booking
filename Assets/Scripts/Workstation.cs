@@ -1,9 +1,6 @@
-﻿namespace DefaultNamespace
+﻿public class Workstation
 {
-    public class Workstation
-    {
-        private Status Status { get; set; }
-        private int ID { get; set; }
-        private string Description { get; set; }
-    }
+    private int ID { get; set; }
+    private Status Status { get; set; }
+    private string Description { get; set; }
 }
