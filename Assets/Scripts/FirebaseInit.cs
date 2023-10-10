@@ -8,7 +8,7 @@ public class FirebaseInit : MonoBehaviour
 {
     private FirebaseManager Fm;
     private DatabaseReference dbReference;
-    
+
 
     private async void Start()
     {
@@ -23,15 +23,28 @@ public class FirebaseInit : MonoBehaviour
 
     public void CreateBooking()
     {
-        
-     //  dbReference = FirebaseDatabase.DefaultInstance.RootReference;
-     // 
-     //  var date = DateTime.Now.ToString("dd_MM_yyyy");
-     //  var b1 = new Booking(1, DateTime.Now,  1, "y2");
-     //  var json = JsonUtility.ToJson(b1);
-     //  dbReference.Child("bookings").Child(date).SetRawJsonValueAsync(json);
+
+        //  dbReference = FirebaseDatabase.DefaultInstance.RootReference;
+        // 
+        //  var date = DateTime.Now.ToString("dd_MM_yyyy");
+        //  var b1 = new Booking(1, DateTime.Now,  1, "y2");
+        //  var json = JsonUtility.ToJson(b1);
+        //  dbReference.Child("bookings").Child(date).SetRawJsonValueAsync(json);
 
 
-     Fm.BookWorkstation(new Booking(1, DateTime.Today, 2, "2"));
+        // Fm.BookWorkstation(new Booking(1, DateTime.Today, 2, "2"));
+        // Fm.DeleteBooking(new Booking(1, DateTime.Today, 2, "2"));
+
+        Fm.BookWorkstation(new Booking(1, DateTime.Today, 3, "2"), success =>
+        {
+            if (success)
+            {
+                Debug.Log("Booking successful!");
+            }
+            else
+            {
+                Debug.LogWarning("Booking failed.");
+            }
+        });
     }
 }
