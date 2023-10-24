@@ -19,7 +19,9 @@ public class GroupMenu : MonoBehaviour
         isOpen = true;
         GroupPanel.SetActive(isOpen);
 
+        GroupDropdown.AddOptions(new List<string> { "select" });
         GroupDropdown.AddOptions(Groups);
+
         GroupText.text = GroupDropdown.options[SettingsData.GroupIndex].text;
         DropdownSelect(SettingsData.GroupIndex);
     }

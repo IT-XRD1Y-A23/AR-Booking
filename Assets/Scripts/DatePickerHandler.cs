@@ -17,10 +17,14 @@ public class DatePickerHandler : MonoBehaviour
     string pattern = @"8:00-12:00|12:00-16:00|16:00-00:00";
 
     public GameObject datePickerPanel;
+
+    public SettingsData SettingsData;
     // Start is called before the first frame update
     void Start()
     {
         dateLabel.text = DateTime.Now.ToString("ddd, dd MMM") + " 8:00-12:00";
+        SettingsData.Date = DateTime.Now;
+        SettingsData.DateString = DateTime.Now.ToString("ddd, dd MMM");
     }
 
     // Update is called once per frame
@@ -52,8 +56,8 @@ public class DatePickerHandler : MonoBehaviour
 
 
                 }
-
                 dateLabel.text += " " + toggles[i].GetComponentInChildren<Text>().text;
+                SettingsData.Timeslot = TimeSlots.ToTimeSlot(toggles[i].GetComponentInChildren<Text>().text);
 
             }
         }
@@ -62,5 +66,7 @@ public class DatePickerHandler : MonoBehaviour
     {
         string selected = date.ToString("ddd, dd MMM");
         dateLabel.text = selected;
+        SettingsData.Date = date;
+        SettingsData.DateString = selected;
     }
 }

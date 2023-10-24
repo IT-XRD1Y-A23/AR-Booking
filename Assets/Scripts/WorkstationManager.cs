@@ -20,6 +20,8 @@ public class WorkstationManager : MonoBehaviour
 
     public TextMeshProUGUI debugText;
 
+    public SettingsData SettingsData;
+
     // Awake is called before Start.
     private void Awake()
     {
@@ -110,6 +112,9 @@ public class WorkstationManager : MonoBehaviour
                 if (_previouslySelectedWorkstation != null && _previouslySelectedWorkstation != _currentlySelectedWorkstation)
                     SetWorkstationStatus(_previouslySelectedWorkstation.GetWorkstationNumber(), Status.Available);
                 _previouslySelectedWorkstation = _currentlySelectedWorkstation;
+                //update SettingsData
+                SettingsData.SelectedWorkStationNumber = _currentlySelectedWorkstation.GetWorkstationNumber();
+                SettingsData.SelectedWorkStationDescription = GetWorkstationDescription(_currentlySelectedWorkstation.GetWorkstationNumber());
                 break;
             default:
                 return;
@@ -151,6 +156,12 @@ public class WorkstationManager : MonoBehaviour
     {
         workstations[index - 1] = workstation;
     }
+    // description of workstations
+    public string GetWorkstationDescription(int workstationNumber)
+    {
+        return _descriptions[workstationNumber - 1];
+    }
+
 
     // Status of workstations
     public Status GetWorkstationStatus(int workstationNumber)
