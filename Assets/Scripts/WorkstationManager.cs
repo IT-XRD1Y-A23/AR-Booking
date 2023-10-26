@@ -69,7 +69,7 @@ public class WorkstationManager : MonoBehaviour
             //new Booking(4, DateTime.Now, 1, "2Y")
         };
                 
-        RefreshLights(Bookings);
+        RefreshLights(Bookings,SettingsData.Timeslot);
     }
     
     // Update is called once per frame
@@ -122,16 +122,15 @@ public class WorkstationManager : MonoBehaviour
         _currentlySelectedWorkstation.SetLight(Status.Selected);
     }
 
-    public void RefreshLights(List<Booking> bookings)
+    public void RefreshLights(List<Booking> bookings,TimeSlot timeSlot)
     {
-        
-        foreach (var workstation in workstations)
-        {
-            SetWorkstationStatus(workstation.GetComponent<LocalWorkstationManager>().GetWorkstationNumber(), Status.Available);
+        for (int i = 1; i < workstations.Length+1; i++)
+        {      
+            SetWorkstationStatus(i, Status.Available);
         }
         foreach (var booking in bookings)
-        {
-           // SetWorkstationStatus(booking.workstationNumber, Status.Unavailable);
+        { 
+            SetWorkstationStatus(int.Parse(booking.workstationNumber), Status.Unavailable);
         }
     }
 

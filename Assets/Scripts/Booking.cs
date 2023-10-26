@@ -1,16 +1,17 @@
 ﻿using System;
 using JetBrains.Annotations;
+using UnityEngine;
 
 public class Booking
 {
     [CanBeNull] public string id;
     public string workstationNumber;
-    public string bookedDate;
+    public DateTime bookedDate;
     public string timeslot;
     public string groupNumber; 
 
 
-    public Booking(string workstationNumber,string bookedDate,  string timeslot, string groupNumber)
+    public Booking(string workstationNumber,DateTime bookedDate,  string timeslot, string groupNumber)
     {
         this.workstationNumber = workstationNumber;
         this.bookedDate = bookedDate;
@@ -18,7 +19,7 @@ public class Booking
         this.groupNumber = groupNumber;
     }
     
-    public Booking(string workstationNumber,string bookedDate,  string timeslot, string groupNumber, string id)
+    public Booking(string workstationNumber,DateTime bookedDate, string timeslot, string groupNumber, string id)
     {
         this.workstationNumber = workstationNumber;
         this.bookedDate = bookedDate;

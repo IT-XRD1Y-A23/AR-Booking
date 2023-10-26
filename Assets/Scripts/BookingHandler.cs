@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
@@ -6,7 +8,7 @@ using UnityEngine;
 public class BookingHandler : MonoBehaviour
 {
     // Reference to our custom Firebase Data Access Object, used for Firebase operations.
-    private FirebaseDao _firebaseDao; 
+    private FirebaseDao _firebaseDao = new(); 
 
     /// <summary>
     /// Called when the script instance is being loaded.
@@ -47,7 +49,7 @@ public class BookingHandler : MonoBehaviour
     public void TryCreateBooking() 
     {
         // Prepare a new booking instance with example details.
-        Booking newBooking = new Booking("9", "24-24-25", "Evening", "11");
+        Booking newBooking = new Booking("5", new DateTime(2023,10,26), TimeSlot.Evening.ToString(), "11");
 
         // Attempt to create the booking in Firebase.
         _firebaseDao.TryCreateBooking(newBooking, 
@@ -90,20 +92,23 @@ public class BookingHandler : MonoBehaviour
     /// <summary>
     /// Retrieves and logs all bookings for a specific date.
     /// </summary>
-    public void FetchBookingsForDate() 
+    public IEnumerable<Booking> FetchBookingsForDate(DateTime specificDate) 
     {
-        // Specify the date for which to retrieve bookings.
-        string specificDate = "23-24-25"; // This could be dynamic in a real-world application.
-
+     
+        var myBookingList = new List<Booking>();
         // Request bookings for the specified date from Firebase.
-        _firebaseDao.FetchBookingsForDate(specificDate, 
+        Debug.Log(specificDate.ToString("dd-MM-yyyy"));
+        Debug.Log(_firebaseDao);
+        _firebaseDao.FetchBookingsForDate(specificDate.ToString("dd-MM-yyyy"), 
             bookingsList => 
             {
                 // Success callback: Log each retrieved booking for verification.
                 foreach (var booking in bookingsList)
                 {
-                    Debug.Log($"Retrieved booking for group: {booking.groupNumber}");
+                    Debug.Log($"Retrieved booking for group: {booking.groupNumber} {booking.id}");
                 }
+
+                myBookingList = bookingsList;
             },
             error => 
             {
@@ -111,6 +116,8 @@ public class BookingHandler : MonoBehaviour
                 Debug.LogError($"Error retrieving bookings for {specificDate}: {error}");
             }
         );
+
+        return myBookingList;
     }
     
     /// <summary>

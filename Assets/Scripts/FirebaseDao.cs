@@ -14,11 +14,11 @@ public class FirebaseDao
     public void TryCreateBooking(Booking newBooking, Action onSuccess, Action<string> onFailure)
     {
         // First, check for booking conflicts.
-        CheckForBookingConflict(newBooking.bookedDate, newBooking, 
+        CheckForBookingConflict(newBooking.bookedDate.ToString("dd-MM-yyyy"), newBooking, 
             () => 
             {
                 // No conflicts, proceed to create the booking.
-                DatabaseReference dateRef = _dbReference.Child("bookings").Child(newBooking.bookedDate);
+                DatabaseReference dateRef = _dbReference.Child("bookings").Child(newBooking.bookedDate.ToString("dd-MM-yyyy"));
                 string bookingJson = JsonUtility.ToJson(newBooking);
             
                 dateRef.Push().SetRawJsonValueAsync(bookingJson).ContinueWith(bookingTask => 

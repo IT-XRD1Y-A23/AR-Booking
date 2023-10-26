@@ -14365,7 +14365,7 @@ GameObject:
   - component: {fileID: 983389172}
   - component: {fileID: 983389173}
   m_Layer: 0
-  m_Name: FirebaseManager
+  m_Name: BookingHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26710,9 +26710,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 5499bef1abfe02043a1c51bf95dcab66, type: 3}
-        m_TargetAssemblyTypeName: FirebaseInit, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 983389173}
+        m_TargetAssemblyTypeName: BookingHandler, Assembly-CSharp
+        m_MethodName: TryDeleteBooking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
