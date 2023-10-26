@@ -49,7 +49,7 @@ public class BookingHandler : MonoBehaviour
     public void TryCreateBooking() 
     {
         // Prepare a new booking instance with example details.
-        Booking newBooking = new Booking("5", new DateTime(2023,10,26), TimeSlot.Evening.ToString(), "11");
+        Booking newBooking = new Booking("5", new DateTime(2023,10,26), TimeSlot.Evening, "11");
 
         // Attempt to create the booking in Firebase.
         _firebaseDao.TryCreateBooking(newBooking, 

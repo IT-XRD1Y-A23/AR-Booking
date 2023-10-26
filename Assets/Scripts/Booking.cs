@@ -7,11 +7,11 @@ public class Booking
     [CanBeNull] public string id;
     public string workstationNumber;
     public DateTime bookedDate;
-    public string timeslot;
+    public TimeSlot timeslot;
     public string groupNumber; 
 
 
-    public Booking(string workstationNumber,DateTime bookedDate,  string timeslot, string groupNumber)
+    public Booking(string workstationNumber,DateTime bookedDate,  TimeSlot timeslot, string groupNumber)
     {
         this.workstationNumber = workstationNumber;
         this.bookedDate = bookedDate;
@@ -19,7 +19,7 @@ public class Booking
         this.groupNumber = groupNumber;
     }
     
-    public Booking(string workstationNumber,DateTime bookedDate, string timeslot, string groupNumber, string id)
+    public Booking(string workstationNumber,DateTime bookedDate, TimeSlot timeslot, string groupNumber, string id)
     {
         this.workstationNumber = workstationNumber;
         this.bookedDate = bookedDate;
