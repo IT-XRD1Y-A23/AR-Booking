@@ -1,19 +1,31 @@
 ﻿using System;
+using JetBrains.Annotations;
+using UnityEngine;
 
 public class Booking
 {
-    public int workstationNumber;
+    [CanBeNull] public string id;
+    public string workstationNumber;
     public DateTime bookedDate;
-    public int timeslot;
+    public TimeSlot timeslot;
     public string groupNumber; 
 
 
-    public Booking(int workstationNumber,DateTime bookedDate,  int timeslot, string groupNumber)
+    public Booking(string workstationNumber,DateTime bookedDate,  TimeSlot timeslot, string groupNumber)
     {
         this.workstationNumber = workstationNumber;
         this.bookedDate = bookedDate;
         this.timeslot = timeslot;
         this.groupNumber = groupNumber;
+    }
+    
+    public Booking(string workstationNumber,DateTime bookedDate, TimeSlot timeslot, string groupNumber, string id)
+    {
+        this.workstationNumber = workstationNumber;
+        this.bookedDate = bookedDate;
+        this.timeslot = timeslot;
+        this.groupNumber = groupNumber;
+        this.id = id;
     }
 
 }
