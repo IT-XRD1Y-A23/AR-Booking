@@ -16,12 +16,6 @@ public class ClickSphere : MonoBehaviour
         lightComp.intensity = 1;
 
     }
-    // sadasd
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnMouseDown(){
 
